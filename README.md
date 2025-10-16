@@ -8,7 +8,7 @@ A simple web radio player built with HTML, CSS, and JavaScript.
 
 > Pour découvrir la balise audio
 
-https://liliwol.github.io/JS-WebRadio/01 SimplePlayer/index.html
+https://liliwol.github.io/JS-WebRadio/01-Simple-Player/index.html
 
 
 
