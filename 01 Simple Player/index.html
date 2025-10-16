@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="style.css">
+        <title>WebRadio</title>
+    </head>
+    <body>
+        <div class="radio-player">
+            <audio class="visually-hidden" id="stream">
+                <source src="http://radio.fenelon-notredame.fr:666/listen/radio_fenelon/radio_fenelon.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+
+
+            <div class="player-controls">
+                <button name="play-pause" class="button play-pause-button" aria-label="Play/pause">
+                    <i class="fas fa-play" aria-hidden></i>
+                </button>
+
+                <div class="volume-and-title">
+                    <div class="currently-playing" aria-label="Currently playing">
+                        <span class="currently-playing-label">Now playing on Some Radio Station</span>
+                        <span class="currently-playing-title">Titre en cours</span>
+                    </div>
+
+                    <div class="volume-controls">
+                        <button name="mute" class="button mute-button" aria-label="Mute/unmute">
+                            <i class="fas fa-volume-down" aria-hidden></i>
+                        </button>
+
+                        <input type="range" name="volume" class="volume" min="0" max="1" step="0.05" value="0.2" aria-label="Volume">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    
+    </body>
+</html>
