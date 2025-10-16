@@ -15,9 +15,9 @@ audio.volume = currentVolume
  * Fetches the currently playing
  * @returns {Promise<any>}
  */
-const fetchCurrentlyPlaying = () => fetch('...')
-    .then(response => response.json())
-    .then(data => currentlyPlaying.innerText = data.currentSong)
+// const fetchCurrentlyPlaying = () => fetch('...')
+//     .then(response => response.json())
+//     .then(data => currentlyPlaying.innerText = data.currentSong)
 /**
  * Adjusts the icon of the "mute" button based on the given volume.
  * @param volume
@@ -81,8 +81,8 @@ playPauseButton.addEventListener('click', () => {
         playPauseButtonIcon.classList.remove('fa-play')
         playPauseButtonIcon.classList.add('fa-pause')
 
-        fetchCurrentlyPlaying()
-        fetchInterval = setInterval(fetchCurrentlyPlaying, 3000)
+        // fetchCurrentlyPlaying()
+        // fetchInterval = setInterval(fetchCurrentlyPlaying, 3000)
     }
 
     isPlaying = !isPlaying
