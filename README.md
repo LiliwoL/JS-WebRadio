@@ -1,5 +1,7 @@
 Web Radio Fenelon
 
+CodePen: https://codepen.io/liliwol/pen/LEGZWgJ
+
 # 01 Simple Player
 
 A simple web radio player built with HTML, CSS, and JavaScript.

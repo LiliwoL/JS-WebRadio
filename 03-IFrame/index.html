@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Player Radio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .player-container {
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .album-art {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        .track-info {
+            margin-bottom: 8px;
+        }
+        .track-title {
+            font-weight: bold;
+            font-size: 1em;
+            margin: 0;
+            padding: 0 5px;
+        }
+        .play-pause-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .play-pause-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="player-container">
+    <img id="albumArt" class="album-art" src="https://via.placeholder.com/120" alt="Pochette">
+    <div class="track-info">
+        <div id="trackTitle" class="track-title">Titre en cours</div>
+    </div>
+    <button id="playPauseBtn" class="play-pause-btn">Play</button>
+</div>
+
+<script>
+    // Initialisation du player
+    const sound = new Howl({
+        src: ['https://radio.fenelon-notredame.fr/listen/radio_fenelon/radio_fenelon.mp3'], // Remplace par ton URL de flux
+        html5: true,
+        format: ['mp3'],
+        onplay: function() {
+            document.getElementById('playPauseBtn').textContent = 'Pause';
+        },
+        onpause: function() {
+            document.getElementById('playPauseBtn').textContent = 'Play';
+        }
+    });
+
+    // Exemple de données pour le titre et l'image
+    const currentTrack = {
+        title: "Nom du titre",
+        image: "https://via.placeholder.com/120" // Remplace par l'URL de l'image
+    };
+
+    // Mise à jour de l'interface
+    document.getElementById('trackTitle').textContent = currentTrack.title;
+    document.getElementById('albumArt').src = currentTrack.image;
+
+    // Gestion du bouton Play/Pause
+    document.getElementById('playPauseBtn').addEventListener('click', function() {
+        if (sound.playing()) {
+            sound.pause();
+        } else {
+            sound.play();
+        }
+    });
+</script>
+</body>
+</html>
